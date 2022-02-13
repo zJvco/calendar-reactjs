@@ -1,0 +1,21 @@
+.calendar-container {
+    margin: 5px;
+}
+
+.calendar-container h1 {
+    display: flex;
+    align-items: center;
+    margin: 28px 2%;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.calendar-container h1 .calendar-icon-background {
+    display: flex;
+    background-color: var(--site-color);
+    color: #fff;
+    padding: 5px 6px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-right: 14px;
+}

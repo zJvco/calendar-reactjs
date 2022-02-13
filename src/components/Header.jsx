@@ -1,11 +1,13 @@
+import '../assets/style/Header.css';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Header() {
     return (
         <header>
-            <a href="/">My Calendar</a>
+            <a className="header-title" href="/">MyCalendar</a>
             <nav>
-                <button><FontAwesomeIcon icon="fa-solid fa-plus" /></button>
+                <button className="new-meeting-btn"><FontAwesomeIcon icon="fa-solid fa-plus" />New meeting</button>
             </nav>
         </header>
     );
