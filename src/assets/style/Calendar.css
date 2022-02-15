@@ -1,0 +1,33 @@
+:root {
+    --calendar-card-min-width: 100px;
+    --calendar-card-width: 100%;
+    --calendar-card-height: 30px;
+    --calendar-header-card-width: var(--calendar-card-width);
+    --calendar-header-card-height: 60px;
+    --calendar-leftside-card-width: 50px;
+    --calendar-leftside-card-height: var(--calendar-card-height);
+}
+
+.calendar {
+    overflow: auto;
+}
+
+.calendar-header {
+    display: flex;
+}
+
+.calendar-header div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: var(--calendar-header-card-width);
+    min-width: var(--calendar-card-min-width);
+    height: var(--calendar-header-card-height);
+    padding: 6px;
+    font-size: 0.8rem;
+}
+
+.calendar-header div span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
