@@ -9,6 +9,7 @@
 }
 
 .calendar {
+    display: none;
     overflow: auto;
 }
 
@@ -78,4 +79,9 @@
 
 .calendar-content .calendar-card:last-child {
     border-bottom: 1px solid #ccc;
+}
+
+.calendar-content .calendar-card:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }

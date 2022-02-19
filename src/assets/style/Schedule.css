@@ -1,0 +1,132 @@
+:root {
+    --form-color: rgba(0, 0, 0, 0.3);
+    --form-color-darker: rgba(0, 0, 0, 0.4);
+}
+
+.input-group {
+    color: var(--form-color);
+    padding: 15px;
+}
+
+.input-group label {
+    margin: 0 20px;
+    height: 100%;
+}
+
+.input-group input, textarea, select, span {
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+.input-group input[type="text"], textarea {
+    width: 50%;
+    padding: 5px;
+}
+
+.input-group select {
+    background-color: unset;
+}
+
+.input-group input[type="text"]:focus, input[type="date"]:focus, select:focus, textarea:focus {
+    border-bottom: 1px solid var(--site-color);
+}
+
+/* Form title group */
+.title-group {
+    display: flex;
+    align-items: center;
+}
+
+/* Form time group */
+.time-group {
+    display: flex;
+    align-items: center;
+}
+
+.time-group .time-content {
+    display: flex;
+    align-items: center;
+}
+
+.time-group .fa-arrow-right {
+    margin: 0 15px;
+}
+
+.time-group input {
+    margin: 0 3px;
+}
+
+.time-group .total-time {
+    color: #000;
+    margin: 0 10px;
+}
+
+/* Form occurrence group */
+.occurrence-group {
+    display: flex;
+    align-items: center;
+}
+
+/* Form description group */
+.description-group {
+    display: flex;
+}
+
+.description-group textarea {
+    resize: none;
+}
+
+/* From submit group */
+.submit-group {
+    text-align: right;
+}
+
+.submit-group input {
+    margin: 0 8px;
+    padding: 8px 18px;
+    cursor: pointer;
+    border: 1px solid var(--form-color);
+}
+
+.submit-group #save {
+    background-color: var(--site-color);
+    font-weight: bold;
+    color: #fff;
+}
+
+.submit-group #save:hover {
+    background-color: var(--site-color-darker);
+}
+
+.submit-group #close:hover {
+    border: 1px solid var(--form-color-darker);
+}
+
+@media screen and (max-width: 720px) {
+    /* From time group */
+    .time-group .time-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .time-group .total-time {
+        margin: 4px;
+    }
+
+    .time-group .fa-arrow-right {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .input-group input[type="text"], textarea {
+        width: 100%;
+    }
+
+    /* From time group */
+    .time-group .date-group {
+        margin: 6px 0;
+    }
+}

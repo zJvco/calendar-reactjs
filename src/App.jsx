@@ -1,6 +1,7 @@
 import './assets/style/App.css'
 import Header from './components/Header';
 import Calendar from './components/Calendar';
+import Schedule from './components/Schedule';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -16,6 +17,7 @@ function App() {
             </div>
             Calendar
             </h1>
+          <Schedule/>
           <Calendar/>
         </div>
       </main>
