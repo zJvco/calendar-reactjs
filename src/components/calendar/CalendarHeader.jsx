@@ -1,9 +1,6 @@
 import { toTitleCase } from '../../utils/stringHandler';
 
-const daysNameOfWeek = ["sunday", "monday", "tuesday", "wednesday",
-                        "thursday", "friday", "saturday"];
-
-function CalendarHeader() {
+function CalendarHeader(props) {
     const date = new Date();
     
     let headers = [];
@@ -28,11 +25,11 @@ function CalendarHeader() {
         return calcDay;
     }
 
-    for (let i = 0; i < daysNameOfWeek.length; i++) {
+    for (let i = 0; i < props.daysNameOfWeek.length; i++) {
         headers.push(
-            <div key={i} className={daysNameOfWeek[i]}>
+            <div key={i} className={"header " + props.daysNameOfWeek[i]}>
                 <span>{getDaysOfWeek(i)}</span>
-                <>{toTitleCase(daysNameOfWeek[i])}</>
+                <>{toTitleCase(props.daysNameOfWeek[i])}</>
             </div>
         );
     }

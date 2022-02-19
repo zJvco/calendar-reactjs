@@ -1,10 +1,10 @@
 :root {
     --calendar-card-min-width: 100px;
     --calendar-card-width: 100%;
-    --calendar-card-height: 30px;
+    --calendar-card-height: 80px;
     --calendar-header-card-width: var(--calendar-card-width);
     --calendar-header-card-height: 60px;
-    --calendar-leftside-card-width: 50px;
+    --calendar-leftside-card-width: 60px;
     --calendar-leftside-card-height: var(--calendar-card-height);
 }
 
@@ -12,11 +12,17 @@
     overflow: auto;
 }
 
+/* Header */
 .calendar-header {
     display: flex;
 }
 
-.calendar-header div {
+.calendar-header .empty {
+    min-width: var(--calendar-leftside-card-width);
+    height: var(--calendar-header-card-height);
+}
+
+.calendar-header .header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -30,4 +36,46 @@
 .calendar-header div span {
     font-size: 1.2rem;
     font-weight: bold;
+}
+
+/* Calendar body */
+.calendar-body {
+    display: flex;
+}
+
+/* Left side */
+.calendar-leftside-hours .hour {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--calendar-leftside-card-width);
+    height: var(--calendar-leftside-card-height);
+    font-size: 0.8rem;
+}
+
+/* Calendar content */
+.calendar-content {
+    display: flex;
+    width: 100%;
+}
+
+.calendar-content .cols {
+    width: 100%;
+}
+
+.calendar-content .calendar-card {
+    width: var(--calendar-card-width);
+    min-width: var(--calendar-card-min-width);
+    height: var(--calendar-card-height);
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    border-left: 0;
+}
+
+.calendar-content .cols:nth-child(1) .calendar-card {
+    border-left: 1px solid #ccc;
+}
+
+.calendar-content .calendar-card:last-child {
+    border-bottom: 1px solid #ccc;
 }
