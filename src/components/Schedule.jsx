@@ -48,6 +48,20 @@ function Schedule(props) {
         getFTimeValue(curHour, curMinutes + 30)
     );
 
+    const calcTotalTime = (ith, ihm, ieh, iem) => {
+        let fa = convertHourToMinutes(ith) + ihm;
+        let fb = convertHourToMinutes(ieh) + iem;
+
+        let calc = (Math.abs(fa - fb));
+
+        if (calc > 60) {
+            setTotalTime((calc / 60).toString() + "h");
+        }
+        else {
+            setTotalTime(calc.toString() + "min");
+        }
+    }
+
     const onChangeSelectedOption = (e) => {
         const fih = parseInt(e.target.value.split(":"));
         const fim = parseInt(e.target.value.split(":")[1]);
@@ -62,10 +76,24 @@ function Schedule(props) {
         const feh = parseInt(fTimeEnd.split(":"));
         const fem = parseInt(fTimeEnd.split(":")[1]);
 
-        let fa = convertHourToMinutes(fih) + fim;
-        let fb = convertHourToMinutes(feh) + fem;
+        calcTotalTime(fih, fim, feh, fem);
+    }
 
-        setTotalTime((Math.abs(fa - fb)).toString() + "min");
+    const onChangeEndOption = (e) => {
+        const selectedValueEndOption = e.target.value;
+
+        const esh = parseInt(e.target.value.split(":"));
+        const esm = parseInt(e.target.value.split(":")[1]);
+        
+        const ish = parseInt(selectedInitialTime.split(":"));
+        const ism = parseInt(selectedInitialTime.split(":")[1]);
+
+        if (selectedValueEndOption <= selectedInitialTime) {
+            e.target.value = getFTimeValue(ish, ism+30);
+        }
+        else {
+            calcTotalTime(ish, ism, esh, esm);
+        }
     }
 
     return (
@@ -98,7 +126,8 @@ function Schedule(props) {
                                 value={defaultDateValue}
                                 onChange={e => setDefaultDateValue(e.value)}/>
                             <select name="end-hour" id="end-hour"
-                                defaultValue={ selectedEndTime }>
+                                defaultValue={ selectedEndTime }
+                                onChange={e => onChangeEndOption(e)}>
                                 <OptionsTime/>
                             </select>
                         </div>
