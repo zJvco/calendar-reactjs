@@ -7,13 +7,13 @@ import CalendarLeftSideHours from './calendar/CalendarLeftSideHours';
 const daysNameOfWeek = ["sunday", "monday", "tuesday", "wednesday",
                         "thursday", "friday", "saturday"];
 
-function Calendar() {
+function Calendar(props) {
     return (
         <div className="calendar">
             <CalendarHeader daysNameOfWeek={daysNameOfWeek}/>
             <div className="calendar-body">
                 <CalendarLeftSideHours/>
-                <CalendarContent daysNameOfWeek={daysNameOfWeek}/>
+                <CalendarContent daysNameOfWeek={daysNameOfWeek} setSchedule={props.setSchedule}/>
             </div>
         </div>
     );
